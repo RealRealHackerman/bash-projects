@@ -1,5 +1,0 @@
-Server Started
-Login Success
-Error Connecting Database
-User Login
-Warning Memory Low
