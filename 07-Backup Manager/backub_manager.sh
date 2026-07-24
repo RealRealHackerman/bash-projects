@@ -4,7 +4,6 @@ echo "Enter Path To Backup:"
 read path
 echo "Enter Backup Directory:"
 read path_backup_directory
-directory_name=$(basename "$path")
 backup(){
     if [ -d "$2" ]
     then

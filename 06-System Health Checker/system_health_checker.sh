@@ -9,15 +9,12 @@ echo "===== System Health ====="
 
 disk=$(df -h / | sed -n '2p' | awk '{print$5}' | sed 's/%//')
 
-if [ $disk -le 50 ]
-then
+if [ $disk -lt 50 ] ; then
     echo "Disk : good ($disk)"
-elif [ $disk -le 81 ]
-then
+elif [ $disk -lt 80 ] ; then
     echo "Disk : OK ($disk)"
-elif [ $disk -ge 80 ]
-then
-    echo "Disk : warning ($disk)"
+else 
+    echo "Disk : warning ($disk%)"
 
 fi
 process_exist=$(ps -e | grep "$process")

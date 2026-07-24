@@ -3,8 +3,7 @@
 echo "Enter Path :"
 read path
 
-if [ -f "$path" ]
-then
+if [ -f "$path" ] ; then
     total_lines=$(wc -l "$path" | awk '{print$1}')
     echo "Enter Search Word :"
     read word
