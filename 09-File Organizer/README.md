@@ -1,75 +1,85 @@
 # File Organizer
 
-A Bash script that automatically organizes files into folders based on their file extension.
+A simple Bash script that organizes files into folders based on their extensions.
 
 ## Features
 
-* Organizes files recursively
-* Automatically creates destination folders
-* Supports:
-
-  * Videos
-  * Images
-  * Music
-  * PDF files
-  * Archives
-  * Others
-* Prevents overwriting existing files using `mv -n`
-* Displays a summary report after execution
+- Organizes files into:
+  - Videos
+  - Images
+  - Music
+  - PDF
+  - Archive
+  - Others
+- Progress bar
+- Final report
+- Calculates success rate
+- Skips existing files using `mv -n`
 
 ## Supported Extensions
 
-| Category | Extensions                      |
-| -------- | ------------------------------- |
-| Videos   | `.mp4`, `.mkv`, `.avi`          |
-| Images   | `.jpg`, `.jpeg`, `.png`, `.gif` |
-| Music    | `.mp3`                          |
-| PDF      | `.pdf`                          |
-| Archives | `.zip`, `.rar`                  |
-| Others   | Any unsupported file            |
+### Videos
+- mp4
+- mkv
+- avi
+
+### Images
+- jpg
+- jpeg
+- png
+- gif
+
+### Music
+- mp3
+
+### PDF
+- pdf
+
+### Archives
+- zip
+- rar
+
+Everything else is moved to **Others**.
 
 ## Usage
 
-Run the script:
-
 ```bash
-chmod +x file_organizer.sh
-./file_organizer.sh
+chmod +x file-organizer.sh
+./file-organizer.sh
 ```
 
 Enter the directory path when prompted.
 
 Example:
 
-```text
+```
 Enter Path:
 /home/user/Downloads
 ```
 
 ## Example Output
 
-```text
+```
+[████████████████████] 100%
+
+Done.
+
 ===== File Organizer Report =====
-Videos      : 10
-Images      : 3
-Music       : 155
-PDF         : 1
-Archive     : 4
-Others      : 13
-Total files : 186
-Moved files : 182
-Skipped     : 4
-===============================
+Videos      : 4
+Images      : 12
+Music       : 5
+PDF         : 3
+Archive     : 2
+Others      : 1
+Total files : 27
+Moved files : 27
+Skipped     : 0
+Success rate: 100%
 ```
 
-## Concepts Practiced
+## Requirements
 
-* Bash Functions
-* `case`
-* `find`
-* Process Substitution
-* `while read`
-* `mkdir -p`
-* `mv -n`
-* Arithmetic Operations
-* File Management
+- Bash
+- GNU coreutils
+- find
+- sha256sum
